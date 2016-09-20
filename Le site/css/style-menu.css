@@ -1,0 +1,47 @@
+html {
+
+}
+
+body {
+  font-family: 'Pavanam', sans-serif;
+}
+
+.header-menu {
+  height: 80px;
+  background-color: #FF77FE;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu-logo {
+  margin-left: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: #587;
+}
+
+.header-menu nav {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-menu nav a {
+  font-weight: 700;
+  color: #52616D;
+  font-size: 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  -webkit-transition: 200ms all ease;
+  -o-transition: 200ms all ease;
+  transition: 350ms all ease;
+}
+
+.header-menu nav a:hover {
+  color: #C44741;
+  //text-decoration: underline;
+}
