@@ -9,28 +9,63 @@ create table Salarie(
 	salaire integer,
 	dateEmbauche date,
 	constraint fk_salarie
-		foreign key client
-		references Personne(nomPersonne)
+		foreign key (numPersonne)
+		references Personne(numPersonne)
 );
 create table Client(
 	numPersonne integer primary key,
 	poids integer,
-	constraint fk_salarie
-		foreign key client
-		references Personne(nomPersonne)
+	constraint fk_client
+		foreign key (numPersonne)
+		references Personne(numPersonne)
 );
 create table Pilote(
+	numLicence integer primary key,
+	numPersonne integer,
+	constraint fk_pilote
+		foreign key (numPersonne)
+		references Client(numPersonne)
 	
 );
 
+create table Passager(
+	numPersonne integer primary key,
+	constraint fk_passager
+		foreign key (numPersonne)
+		references Client(numPersonne)
+);
+
+create table PiloterPar(
+	numLicence integer,
+	numParapente integer,
+	constraint fk_piloterPar_numLicence
+		foreign key (numLicence)
+		references Pilote(numLicence),
+	constraint fk_piloterPar_numLicence
+		foreign key (numParapente)
+		references parapente(numParapente)
+);
+
+create table Service(
+	numService integer unsigned not null auto_increment primary key,
+	intitule varchar(30),
+);
+
+create table Appartient(
+	numservice integer unique,
+	
+);
+
+
+
 //tables Ronan :
 
-create table site(
+create table Site(
 	numSite integer primary key,
 	nom character(30) not null
 )
 
-create table parcours(
+create table Parcours(
 	numParcours integer primary key,
 	nbHeures integer not null
 	numSiteDepart integer not null,
@@ -39,7 +74,7 @@ create table parcours(
 	constraint parcours_fk2 foreign key(numSiteArrivee) references site(numSite)
 )
 
-create table vol(
+create table Vol(
 	numVol integer primary key,
 	dateVol date not null,
 	heureDepart integer not null,
@@ -47,7 +82,7 @@ create table vol(
 	constraint vol_fk foreign key(numParcours) references parcours	
 )
 
-create table reservation(
+create table Reservation(
 	prix integer not null,
 	casque boolean not null,
 	numPilote integer not null,
@@ -59,7 +94,7 @@ create table reservation(
 	constraint reservation_pk primary key(numPilote,numPassager,numVol)
 )
 
-create table modele(
+create table Modele(
 	numModele integer primary key,
 	nom character(30) not null,
 	nbPlaces integer not null,
@@ -67,18 +102,18 @@ create table modele(
 	constraint modele_fk foreign key(numFournisseur) references fournisseur(numFournisseur)
 )
 
-create table parapente(
+create table Parapente(
 	numParapente integer primary key,
 	numModele integer not null,
 	constraint parapente_heritage foreign key(numModele) references modele(numModele),
 )
 
-create table fournisseur(
+create table Fournisseur(
 	numFournisseur integer primary key,
 	nom character(30) not null
 )
 
-create table location(
+create table Location(
 	numPilote integer not null,
 	numParapente integer not null
 	constraint location_pk primary key(numPilote,numParapente)
