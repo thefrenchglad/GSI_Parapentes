@@ -1,6 +1,4 @@
-html {
 
-}
 
 body {
   font-family: 'Pavanam', sans-serif;
@@ -8,7 +6,7 @@ body {
 
 .header-menu {
   height: 80px;
-  background-color: #FF77FE;
+  background-color: #CCC;
   width: 100%;
   margin: 0;
   display: flex;
@@ -17,31 +15,90 @@ body {
 }
 
 .header-menu-logo {
+  margin-top: 5px;
   margin-left: 15px;
-  width: 50px;
-  height: 50px;
-  background-color: #587;
+  height: inherit;
+  width: 150px;
+
+}
+
+.header-menu-logo img {
+  width: auto;
+  height: auto;
 }
 
 .header-menu nav {
+  height: inherit;
   width: 80%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+@keyframes menu_a {
+  from {
+    color: #52616D;
+    border-bottom: rgba(255, 0, 0, 0) solid 3px;
+  }
+  to {
+    color: #C44741;
+    border-bottom: #C44741 solid 3px;
+  }
 }
 
 .header-menu nav a {
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  height: inherit;
+  font-weight: 550;
   color: #52616D;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-decoration: none;
+  letter-spacing: 1.3px;
   text-transform: uppercase;
 
-  -webkit-transition: 200ms all ease;
-  -o-transition: 200ms all ease;
-  transition: 350ms all ease;
+  border-bottom: rgba(255, 0, 0, 0) solid 3px;
+
+  -webkit-transition: 250ms all ease;
+  -o-transition: 250ms all ease;
+  transition: 250ms all ease;
 }
 
 .header-menu nav a:hover {
   color: #C44741;
+  border-bottom: #C44741 solid 3px;
   //text-decoration: underline;
+}
+
+
+.tb-panel {
+  margin: auto;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink 2;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.tb-item {
+  width: 300px;
+  margin: 20px;
+  border: solid white 1px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.tb-item-header {
+  text-transform: uppercase;
+  background-color: rgba(82, 97, 109, 0.8);
+  padding: 10px;
+
+}
+
+.tb-item-content {
+  background-color: rgba(82, 97, 109, 0.6);
+  padding: 5px;
 }
