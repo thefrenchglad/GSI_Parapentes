@@ -21,11 +21,12 @@ create table Client(
 );
 create table Pilote(
 	numLicence integer primary key,
+	niveau integer,
 	numPersonne integer,
 	constraint fk_pilote
 		foreign key (numPersonne)
 		references Client(numPersonne)
-	
+
 );
 
 create table Passager(

@@ -30,9 +30,13 @@
         <input type="text" id="nom" name="pilote_nom" />
       </div>
 
-      <div>
+      <div class="date_container">
         <label for="Date de naissance">Date de naissance</label>
-        <input type="text" id="date_naissance" name="pilote_date" />
+        <div class="date_sub_container">
+          <input type="text" id="jour" name="jour" />
+          <input type="text" id="mois" name="mois" />
+          <input type="text" id="annee" name="annee" />
+        </div>
       </div>
 
       <div>

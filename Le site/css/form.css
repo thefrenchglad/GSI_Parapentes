@@ -45,7 +45,33 @@
 
 }
 .form_button {
+margin-left: 200px;
+}
 
-  padding-left: 250px;
+.date_container {
+  display: inline;
+  flex-direction: row;
+  justify-content: center;
+}
 
+.date_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+
+
+.date_sub_container {
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+  align-items: center;
+}
+
+.date_sub_container input {
+  margin-top: 20px;
+  width: 66px;
+  margin-left: 2px;
+  height: 25px;
 }
