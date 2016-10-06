@@ -22,26 +22,38 @@
     <form class ="form" action="pilote_post.php" method="post">
       <div>
         <label for="prenom">Prenom</label>
-        <input type="text" id="prenom" name="pilote_prenom" />
+        <input placeholder="Jean" type="text" id="prenom" name="pilote_prenom" />
       </div>
 
       <div>
         <label for="nom">Nom</label>
-        <input type="text" id="nom" name="pilote_nom" />
+        <input placeholder="Neymar" type="text" id="nom" name="pilote_nom" />
       </div>
 
       <div class="date_container">
         <label for="Date de naissance">Date de naissance</label>
         <div class="date_sub_container">
-          <input type="text" id="jour" name="jour" />
-          <input type="text" id="mois" name="mois" />
-          <input type="text" id="annee" name="annee" />
+          <input placeholder="01" type="text" id="jour" name="pilote_jour" />
+          <input placeholder="02" type="text" id="mois" name="pilote_mois" />
+          <input placeholder="1983" type="text" id="annee" name="pilote_annee" />
         </div>
       </div>
 
       <div>
-        <label for="Numéro de licence">Numéro de licence</label>
-        <input type="text" id="num_licence" name="pilote_num_licence" />
+        <label class="only_integer" for="Numéro de licence">Numéro de licence</label>
+        <input placeholder="123456" type="text" id="num_licence" name="pilote_num_licence" />
+      </div>
+
+      <div class="">
+        <label for="Niveau">Niveau</label>
+        <select class="" name="pilote_niveau">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+
+
       </div>
 
       <div class="button">
