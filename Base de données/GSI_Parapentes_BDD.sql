@@ -124,7 +124,7 @@ create table PiloterPar(
 	constraint fk_piloterPar_numLicence
 		foreign key (numLicence)
 		references Pilote(numLicence),
-	constraint fk_piloterPar_numLicence
+	constraint fk_piloterPar_numParapente
 		foreign key (numParapente)
 		references parapente(numParapente)
 );
