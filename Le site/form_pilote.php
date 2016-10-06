@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/form.css">
   <link href="https://fonts.googleapis.com/css?family=Pavanam" rel="stylesheet">
 
-  <title>Menu</title>
+  <title>Formulaire pilote</title>
 </head>
 <body>
 
