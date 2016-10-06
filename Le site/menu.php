@@ -30,42 +30,5 @@
 
   </header>
 
-  <section class="tb-panel">
-    <div class="tb-item">
-      <header class="tb-item-header">
-        zbraloocnce 1R
-      </header>
-      <div class="tb-item-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe veniam nostrum obcaecati, magni odit, rerum quos id corporis cum ducimus labore dolor, vel dicta aperiam numquam nihil tenetur dolorum ex.
-      </div>
-    </div>
-    <div class="tb-item">
-      <header class="tb-item-header">
-        chabadabada 1
-      </header>
-      <div class="tb-item-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci et doloribus asperiores eveniet natus, sapiente. Deserunt hic, eius soluta cumque. Architecto obcaecati tempore ea totam! Fuga ipsam aliquid veniam beatae!
-      </div>
-    </div>
-    <div class="tb-item">
-      <header class="tb-item-header">
-        chabadabada 2
-      </header>
-      <div class="tb-item-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci et doloribus asperiores eveniet natus, sapiente. Deserunt hic, eius soluta cumque. Architecto obcaecati tempore ea totam! Fuga ipsam aliquid veniam beatae!
-
-      </div>
-    </div>
-    <div class="tb-item">
-      <header class="tb-item-header">
-        chabadabada 3
-      </header>
-      <div class="tb-item-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci et doloribus asperiores eveniet natus, sapiente. Deserunt hic, eius soluta cumque. Architecto obcaecati tempore ea totam! Fuga ipsam aliquid veniam beatae!
-
-      </div>
-    </div>
-  </section>
-
 </body>
 </html>
