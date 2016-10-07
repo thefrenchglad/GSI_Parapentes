@@ -30,6 +30,11 @@
         <input placeholder="Neymar" type="text" id="nom" name="pilote_nom" />
       </div>
 
+      <div>
+        <label for="poids">Poids</label>
+        <input placeholder="70" type="text" id="poids" name="pilote_poids" />
+      </div>
+
       <div class="date_container">
         <label for="Date de naissance">Date de naissance</label>
         <div class="date_sub_container">

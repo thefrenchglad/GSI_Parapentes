@@ -15,6 +15,14 @@
 <body>
 
   <?php
+
+  try{
+    $bdd = new PDO('mysql:host=localhost;dbname=gsi_parapentes_bdd;charset=utf8','root','');
+    echo 'Connexion réussi';
+  }catch(Exception $e){
+    die('Erreur : ' . $e->getMessage());
+  }
+
   echo $_POST{'pilote_nom'};
   echo "</br>";
   echo $_POST{'pilote_prenom'};
