@@ -18,22 +18,19 @@
 
   try{
     $bdd = new PDO('mysql:host=localhost;dbname=gsi_parapentes_bdd;charset=utf8','root','');
-    echo 'Connexion réussi';
   }catch(Exception $e){
     die('Erreur : ' . $e->getMessage());
   }
 
-  echo $_POST{'pilote_nom'};
-  echo "</br>";
-  echo $_POST{'pilote_prenom'};
-  echo "</br>";
-  echo $_POST{'pilote_num_licence'};
-  echo "</br>";
-  echo $_POST{'pilote_annee'}."-".$_POST{'pilote_mois'}."-".$_POST{'pilote_jour'};
-  echo "</br>";
-  echo $_POST{'pilote_niveau'} ;
+  $date = $_POST['pilote_annee']."-".$_POST['pilote_mois']."-".$_POST['pilote_jour'];
+  $nom = $_POST['pilote_nom'];
+  $prenom = $_POST['pilote_prenom'];
+  $poids = $_POST['pilote_poids'];
+  $niveau = $_POST['pilote_niveau'];
+  $numLicence = $_POST['pilote_num_licence'];
 
-
+  $req1 = $bdd->prepare('insert into pilote(numLicence,niveau,nomPilote,prenomPilote,dateNaissancePilote,poidsPilote) values (:numLicence, :niveau, :nom, :prenom, :dateNaissance, :poids)');
+  $req1 -> execute(array('nom' => $nom, 'prenom' => $prenom, 'dateNaissance' => $date, 'poids' => $poids, 'niveau' => $niveau, 'numLicence' => $numLicence));
 
   ?>
 

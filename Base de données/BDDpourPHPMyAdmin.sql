@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 08 Octobre 2016 à 15:14
+-- Généré le :  Sam 08 Octobre 2016 à 17:01
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -157,7 +157,7 @@ CREATE TABLE `piece` (
 
 CREATE TABLE `pilote` (
   `numLicence` int(11) NOT NULL,
-  `numPilote` int(11) DEFAULT NULL,
+  `numPilote` int(11) NOT NULL,
   `niveau` int(10) UNSIGNED NOT NULL,
   `nomPilote` varchar(30) NOT NULL,
   `prenomPilote` varchar(30) NOT NULL,
@@ -374,10 +374,25 @@ ALTER TABLE `vol`
 ALTER TABLE `controletechnique`
   MODIFY `numControleTechnique` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `passager`
+--
+ALTER TABLE `passager`
+  MODIFY `numPassager` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT pour la table `piece`
 --
 ALTER TABLE `piece`
   MODIFY `numPiece` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `pilote`
+--
+ALTER TABLE `pilote`
+  MODIFY `numPilote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT pour la table `salarie`
+--
+ALTER TABLE `salarie`
+  MODIFY `numSalarie` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `service`
 --

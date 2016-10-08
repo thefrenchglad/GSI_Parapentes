@@ -19,7 +19,7 @@
   <section class="form_container">
     <h1>Nouveau Pilote</h1>
 
-    <form class ="form" action="pilote_post.php" method="post">
+    <form class ="form" action="post_pilote.php" method="post">
       <div>
         <label for="prenom">Prenom</label>
         <input placeholder="Jean" type="text" id="prenom" name="pilote_prenom" />
