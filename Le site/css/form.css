@@ -10,6 +10,7 @@
   flex-direction: column;
 }
 
+
 .form {
     width: 400px;
     padding: 1em;
@@ -18,9 +19,12 @@
     border-radius: 1em;
 }
 
+
+
 .form div + div {
     margin-top: 2em;
 }
+
 
 .form label {
     display: inline-block;
@@ -30,15 +34,38 @@
     margin-left: 0;
 }
 
+#form_ct_container .label_ct_top {
+  width: 100px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+#form_ct_container label {
+  width: auto;
+  margin-right: 20px;
+
+}
+
 .form input, textarea {
     font: 1em;
     width: 200px;
     border: 1px solid #999;
 }
 
+#form_ct_container input, textarea {
+  width: auto;
+
+}
+
+
+
 .form input, textarea {
   vertical-align: baseline;
 }
+
+
 
 
 
@@ -74,3 +101,4 @@
   margin-left: 2px;
   height: 25px;
 }
+*/
