@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 06 Octobre 2016 à 12:20
+-- Généré le :  Sam 08 Octobre 2016 à 15:14
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -29,17 +29,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `appartient` (
   `numPersonne` int(11) DEFAULT NULL,
   `numService` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `client`
---
-
-CREATE TABLE `client` (
-  `numPersonne` int(11) NOT NULL,
-  `poids` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -142,20 +131,11 @@ CREATE TABLE `parcours` (
 --
 
 CREATE TABLE `passager` (
-  `numPersonne` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `personne`
---
-
-CREATE TABLE `personne` (
-  `numPersonne` int(10) UNSIGNED NOT NULL,
-  `nom` varchar(30) DEFAULT NULL,
-  `prenom` varchar(30) DEFAULT NULL,
-  `dateNaissance` date DEFAULT NULL
+  `numPassager` int(11) NOT NULL,
+  `nomPassager` varchar(30) NOT NULL,
+  `prenomPassager` varchar(30) NOT NULL,
+  `poidsPassager` int(11) NOT NULL,
+  `dateNaissancePassager` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -177,7 +157,12 @@ CREATE TABLE `piece` (
 
 CREATE TABLE `pilote` (
   `numLicence` int(11) NOT NULL,
-  `numPersonne` int(11) DEFAULT NULL
+  `numPilote` int(11) DEFAULT NULL,
+  `niveau` int(10) UNSIGNED NOT NULL,
+  `nomPilote` varchar(30) NOT NULL,
+  `prenomPilote` varchar(30) NOT NULL,
+  `dateNaissancePilote` date NOT NULL,
+  `poidsPilote` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -212,9 +197,12 @@ CREATE TABLE `reservation` (
 --
 
 CREATE TABLE `salarie` (
-  `numPersonne` int(11) NOT NULL,
+  `numSalarie` int(11) NOT NULL,
   `salaire` int(11) DEFAULT NULL,
-  `dateEmbauche` date DEFAULT NULL
+  `dateEmbauche` date DEFAULT NULL,
+  `dateNaissanceSalarie` int(11) NOT NULL,
+  `nomSalarie` varchar(30) NOT NULL,
+  `prenomSalarie` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -262,12 +250,6 @@ CREATE TABLE `vol` (
 ALTER TABLE `appartient`
   ADD UNIQUE KEY `numPersonne` (`numPersonne`),
   ADD KEY `fk_piloterPar_numService` (`numService`);
-
---
--- Index pour la table `client`
---
-ALTER TABLE `client`
-  ADD PRIMARY KEY (`numPersonne`);
 
 --
 -- Index pour la table `controletechnique`
@@ -327,13 +309,7 @@ ALTER TABLE `parcours`
 -- Index pour la table `passager`
 --
 ALTER TABLE `passager`
-  ADD PRIMARY KEY (`numPersonne`);
-
---
--- Index pour la table `personne`
---
-ALTER TABLE `personne`
-  ADD PRIMARY KEY (`numPersonne`);
+  ADD PRIMARY KEY (`numPassager`);
 
 --
 -- Index pour la table `piece`
@@ -346,7 +322,7 @@ ALTER TABLE `piece`
 --
 ALTER TABLE `pilote`
   ADD PRIMARY KEY (`numLicence`),
-  ADD KEY `fk_pilote` (`numPersonne`);
+  ADD KEY `fk_pilote` (`numPilote`);
 
 --
 -- Index pour la table `piloterpar`
@@ -367,7 +343,7 @@ ALTER TABLE `reservation`
 -- Index pour la table `salarie`
 --
 ALTER TABLE `salarie`
-  ADD PRIMARY KEY (`numPersonne`);
+  ADD PRIMARY KEY (`numSalarie`);
 
 --
 -- Index pour la table `service`
@@ -397,11 +373,6 @@ ALTER TABLE `vol`
 --
 ALTER TABLE `controletechnique`
   MODIFY `numControleTechnique` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `personne`
---
-ALTER TABLE `personne`
-  MODIFY `numPersonne` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `piece`
 --
