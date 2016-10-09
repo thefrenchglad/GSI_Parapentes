@@ -18,19 +18,20 @@
 
   <?php
 
-  /*try{
+  try{
     $bdd = new PDO('mysql:host=localhost;dbname=gsi_parapentes_bdd;charset=utf8','root','');
   }catch(Exception $e){
     die('Erreur : ' . $e->getMessage());
-  }*/
+  }
 
-  echo $_POST['parapente_nom'];
-  echo $_POST['parapente_numero'];
-  echo $_POST['parapente_fournisseur'];
+  $nom_parapente = $_POST['parapente_nom'];
+  $numero_parapente = $_POST['parapente_numero'];
+  $nom_fournisseur = $_POST['parapente_fournisseur'];
 
-  /*$req1 = $bdd->prepare('?');
-  $req1 -> execute('?');
-  */
+  //Je comprends pas la base
+  $req1 = $bdd->prepare('insert into parapente(nomPassager,prenomPassager,dateNaissancePassager,poidsPassager) values (:nom, :prenom, :dateNaissance, :poids)');
+  $req1 -> execute(array('nom' => $nom, 'prenom' => $prenom, 'dateNaissance' => $date, 'poids' => $poids));
+
 
 
 

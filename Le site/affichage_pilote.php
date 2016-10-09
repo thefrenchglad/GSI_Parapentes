@@ -19,12 +19,11 @@
       die('Erreur : ' . $e->getMessage());
     }
 
-    $req1 = $bdd->prepare('SELECT nomPassager, prenomPassager, poidsPassager, dateNaissancePassager FROM Passager');
+    $req1 = $bdd->prepare('SELECT prenomPilote, nomPilote, poidsPilote, niveau, dateNaissancePilote FROM Pilote');
     $req1 -> execute();
     $result = $req1->fetchall();
 
-
-    $t_head = array("Prenom", "Nom", "Poids", "Date de naissance");
+    $t_head = array("Prenom", "Nom", "Poids", "Niveau", "Date de naissance");
 
    ?>
 
@@ -34,6 +33,8 @@
 
 
     <?php
+
+
     $i = 0;
     for ($i=0; $i < sizeof($t_head); $i++) {
         echo '<th>'.$t_head[$i]."</th>";
@@ -42,13 +43,15 @@
     foreach ($result as $row_key => $row_value) {
         echo "<tr>";
         $i++;
-        echo '<td>'.$row_value['prenomPassager'].'</td>';
-        echo '<td>'.$row_value['nomPassager'].'</td>';
-        echo '<td>'.$row_value['poidsPassager'].'</td>';
-        echo '<td>'.$row_value['dateNaissancePassager'].'</td>';
+        echo '<td>'.$row_value['prenomPilote'].'</td>';
+        echo '<td>'.$row_value['nomPilote'].'</td>';
+        echo '<td>'.$row_value['poidsPilote'].'</td>';
+        echo '<td>'.$row_value['niveau'].'</td>';
+        echo '<td>'.$row_value['dateNaissancePilote'].'</td>';
 
         echo "</tr>";
     }
+
     ?>
 
 
