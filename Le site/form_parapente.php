@@ -14,8 +14,6 @@
 </head>
 <body>
 
-  <?php include("menu.php"); ?>
-
   <section class="form_container">
     <h1>Nouveau passager</h1>
 

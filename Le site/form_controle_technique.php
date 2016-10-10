@@ -14,8 +14,6 @@
 </head>
 <body>
 
-  <?php include("menu.php"); ?>
-
   <section class="form_container" id="form_ct_container">
     <h1>Controle technique</h1>
 
