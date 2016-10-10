@@ -1,13 +1,13 @@
 .form_container {
   width: 30%;
   display: block;
-  margin-top: 20px;
+  /*margin-top: 20px;
   margin-left: 40%;
   margin-right: 40%;
   display: flex;
   align-items: left;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column;*/
 }
 
 
@@ -17,8 +17,18 @@
     padding-left: 0;
     border: 2px solid #CCC;
     border-radius: 1em;
+
+      background: white;
+      border-radius:3px;
+      border-collapse: collapse;
+      //padding:5px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
 }
 
+.button {
+    padding-left: 20px;
+}
 
 
 .form div + div {
@@ -69,10 +79,6 @@
 
 
 
-.form_button {
-  margin-top: -200px;
-  margin-left: 300px;
-}
 
 .date_container {
   display: inline;
@@ -101,4 +107,3 @@
   margin-left: 2px;
   height: 25px;
 }
-*/

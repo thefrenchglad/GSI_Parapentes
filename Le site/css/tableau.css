@@ -1,5 +1,3 @@
-//@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
-
 body {
   //background-color: #3e94ec;
   //font-family: "Roboto", helvetica, arial, sans-serif;
@@ -8,16 +6,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-
+.table_container {
+  width: 60%;
+}
 table {
   background: white;
   border-radius:3px;
   border-collapse: collapse;
-  //height: 320px;
-  margin: auto;
-  //width: 300px;
   padding:5px;
-  //max-width: 300px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   animation: float 5s infinite;
 }
@@ -102,7 +98,7 @@ td:last-child {
   border-right: 0px;
 }
 
-/*
+
 th.text-left {
   text-align: left;
 }
@@ -125,4 +121,8 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+button.form_button {
+    margin-left: 20;
 }

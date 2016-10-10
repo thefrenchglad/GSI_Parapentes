@@ -1,0 +1,11 @@
+.table_form_container {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+button.form_button {
+    margin-left: 20;
+}

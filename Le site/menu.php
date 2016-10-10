@@ -11,7 +11,6 @@
 
   <title>Menu</title>
 </head>
-<body>
 
   <header class="header-menu">
 
@@ -20,15 +19,14 @@
     </div>
 
     <nav>
-      <a href="#">Tableau de bord</a>
-      <a href="#">Clients</a>
-      <a href="#">Locations</a>
-      <a href="#">Parapentes</a>
-      <a href="#">Contrôles techniques</a>
-      <a href="#">Parcours</a>
+      <a href="">Tableau de bord</a>
+      <a href="affichage_pilote.php">Pilotes</a>
+      <a href="affichage_passager.php">Passagers</a>
+      <a href="affichage_parapente.php">Parapentes</a>
+      <a href="affichage_parcours.php">Parcours</a>
+      <a href="affichage_vols.php">Vols</a>
     </nav>
 
   </header>
 
-</body>
 </html>

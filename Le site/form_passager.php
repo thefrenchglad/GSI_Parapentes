@@ -14,12 +14,11 @@
 </head>
 <body>
 
-  <?php include("menu.php"); ?>
-
   <section class="form_container">
-    <h1>Nouveau passager</h1>
 
-    <form class ="form" action="post_passager.php" method="post">
+    <form class ="form" action="affichage_passager.php" method="post">
+      <h1>Nouveau passager</h1>
+
       <div>
         <label for="prenom">Prenom</label>
         <input placeholder="Jean" type="text" id="prenom" name="passager_prenom" />
@@ -44,16 +43,13 @@
         </div>
       </div>
 
-      <div class="button">
+      <div style="" class="button">
         <button class="form_button" type="submit">Envoyer</button>
       </div>
     </form>
 
 
   </section>
-
-
-
 
 </body>
 </html>
