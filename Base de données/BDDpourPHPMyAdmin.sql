@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 08 Octobre 2016 à 17:01
+-- Généré le :  Mar 11 Octobre 2016 à 06:38
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -68,17 +68,6 @@ CREATE TABLE `etat` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `fournisseur`
---
-
-CREATE TABLE `fournisseur` (
-  `numFournisseur` int(11) NOT NULL,
-  `nom` char(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `location`
 --
 
@@ -90,26 +79,25 @@ CREATE TABLE `location` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `modele`
---
-
-CREATE TABLE `modele` (
-  `numModele` int(11) NOT NULL,
-  `nom` char(30) NOT NULL,
-  `nbPlaces` int(11) NOT NULL,
-  `numFournisseur` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `parapente`
 --
 
 CREATE TABLE `parapente` (
   `numParapente` int(11) NOT NULL,
-  `numModele` int(11) NOT NULL
+  `nomParapente` varchar(30) NOT NULL,
+  `immatriculation` int(11) NOT NULL,
+  `fournisseur` varchar(30) NOT NULL,
+  `nbPlace` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `parapente`
+--
+
+INSERT INTO `parapente` (`numParapente`, `nomParapente`, `immatriculation`, `fournisseur`, `nbPlace`) VALUES
+(1, 'elparapento', 123456, 'Niviuk', 2),
+(2, 'kjfbghdkj', 5616, 'Niviuk', 1),
+(3, 'hjebduzefb', 84156, 'Swing', 2);
 
 -- --------------------------------------------------------
 
@@ -138,6 +126,18 @@ CREATE TABLE `passager` (
   `dateNaissancePassager` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `passager`
+--
+
+INSERT INTO `passager` (`numPassager`, `nomPassager`, `prenomPassager`, `poidsPassager`, `dateNaissancePassager`) VALUES
+(3, 'Bono', 'Kevin', 100, '1996-01-03'),
+(4, 'Bonnot', 'Dylan', 80, '1996-01-14'),
+(5, 'Bonnot', 'Dylan', 80, '1996-01-14'),
+(6, 'ygug', 'dugfudg', 78, '1212-12-12'),
+(7, 'azeaz', 'aze', 24, '1212-12-12'),
+(8, 'k', 'k', 7, '7777-07-07');
+
 -- --------------------------------------------------------
 
 --
@@ -164,6 +164,13 @@ CREATE TABLE `pilote` (
   `dateNaissancePilote` date NOT NULL,
   `poidsPilote` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `pilote`
+--
+
+INSERT INTO `pilote` (`numLicence`, `numPilote`, `niveau`, `nomPilote`, `prenomPilote`, `dateNaissancePilote`, `poidsPilote`) VALUES
+(15, 2, 1, 'Bonnot', 'Kévin', '1996-01-03', 100);
 
 -- --------------------------------------------------------
 
@@ -272,30 +279,16 @@ ALTER TABLE `etat`
   ADD KEY `fk_etat_numPiece` (`numPiece`);
 
 --
--- Index pour la table `fournisseur`
---
-ALTER TABLE `fournisseur`
-  ADD PRIMARY KEY (`numFournisseur`);
-
---
 -- Index pour la table `location`
 --
 ALTER TABLE `location`
   ADD PRIMARY KEY (`numPilote`,`numParapente`);
 
 --
--- Index pour la table `modele`
---
-ALTER TABLE `modele`
-  ADD PRIMARY KEY (`numModele`),
-  ADD KEY `modele_fk` (`numFournisseur`);
-
---
 -- Index pour la table `parapente`
 --
 ALTER TABLE `parapente`
-  ADD PRIMARY KEY (`numParapente`),
-  ADD KEY `parapente_heritage` (`numModele`);
+  ADD PRIMARY KEY (`numParapente`);
 
 --
 -- Index pour la table `parcours`
@@ -374,10 +367,15 @@ ALTER TABLE `vol`
 ALTER TABLE `controletechnique`
   MODIFY `numControleTechnique` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `parapente`
+--
+ALTER TABLE `parapente`
+  MODIFY `numParapente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT pour la table `passager`
 --
 ALTER TABLE `passager`
-  MODIFY `numPassager` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `numPassager` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT pour la table `piece`
 --
@@ -387,7 +385,7 @@ ALTER TABLE `piece`
 -- AUTO_INCREMENT pour la table `pilote`
 --
 ALTER TABLE `pilote`
-  MODIFY `numPilote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `numPilote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `salarie`
 --
