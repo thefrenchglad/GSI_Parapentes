@@ -14,36 +14,45 @@
 </head>
 <body>
 
-  <section class="form_container">
-    <h1>Nouveau passager</h1>
+<section class="form_container">
+  <h1>Nouveau parapente</h1>
 
-    <form class ="form" action="post_parapente.php" method="post">
-      <div>
-        <label for="nom">Nom modèle</label>
-        <input placeholder="parapente2000" type="text" id="nom" name="parapente_nom" />
-      </div>
+  <form class ="form" action="post_parapente.php" method="post">
+    <div>
+      <label for="nom">Nom modèle</label>
+      <input placeholder="parapente2000" type="text" id="nom" name="parapente_nom" />
+    </div>
 
-      <div>
-        <label for="num">Numero</label>
-        <input placeholder="123456789" type="text" id="num" name="parapente_numero" />
-      </div>
-      <div>
-        <label>Fournisseur</label>
-        <select name="parapente_fournisseur">
-          <option value="Niviuk">Niviuk</option>
-          <option value="Advance">Advance</option>
-          <option value="Ozone">Ozone</option>
-          <option value="Swing">Swing</option>
-        </select>
-      </div>
+    <div>
+      <label for="num">Immatriculation</label>
+      <input placeholder="123456789" type="text" id="num" name="parapente_numero" />
+    </div>
+    <div>
+      <label>Fournisseur</label>
+      <select name="parapente_fournisseur">
+        <option value="Niviuk">Niviuk</option>
+        <option value="Advance">Advance</option>
+        <option value="Ozone">Ozone</option>
+        <option value="Swing">Swing</option>
+      </select>
+    </div>
 
-      <div class="button">
-        <button class="form_button" type="submit">Envoyer</button>
-      </div>
-    </form>
+    <div>
+      <label>Nombre de places</label>
+      <select name="nb_place">
+        <option value="1">1</option>
+        <option value="2">2</option>
+
+      </select>
+    </div>
+
+    <div class="button">
+      <button class="form_button" type="submit">Envoyer</button>
+    </div>
+  </form>
 
 
-  </section>
+</section>
 
 
 

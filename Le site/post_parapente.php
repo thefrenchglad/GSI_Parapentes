@@ -25,12 +25,13 @@
   }
 
   $nom_parapente = $_POST['parapente_nom'];
-  $numero_parapente = $_POST['parapente_numero'];
-  $nom_fournisseur = $_POST['parapente_fournisseur'];
+  $immat = $_POST['parapente_numero'];
+  $fournisseur = $_POST['parapente_fournisseur'];
+  $nbPlace = $_POST['nb_place'];
 
   //Je comprends pas la base
-  $req1 = $bdd->prepare('insert into parapente(nomPassager,prenomPassager,dateNaissancePassager,poidsPassager) values (:nom, :prenom, :dateNaissance, :poids)');
-  $req1 -> execute(array('nom' => $nom, 'prenom' => $prenom, 'dateNaissance' => $date, 'poids' => $poids));
+  $req1 = $bdd->prepare('insert into parapente(nomParapente,immatriculation,fournisseur,nbPlace) values (:nom, :immat, :fournisseur, :nbPlace)');
+  $req1 -> execute(array('nom' => $nom_parapente, 'immat' => $immat, 'fournisseur' => $fournisseur, 'nbPlace' => $nbPlace));
 
 
 
